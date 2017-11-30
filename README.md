@@ -8,4 +8,4 @@ https://kodaktor.ru/testing_add
 
 http://testingjs.tilda.ws/
 
-https://kodaktor.ru/?!=testing_670df
+https://kodaktor.ru/testing_670df
