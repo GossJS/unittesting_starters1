@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="GossJS">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+	<script>
+	mocha.setup('bdd');
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+	<script>
+	var assert = chai.assert;
+	</script>
+</head>
+
+<body>
+	<h4 id="author" title="GossJS">Skorobogatov Kirill</h4>
+	<script>
+	function s1(a1, b1, c1, a2, b2, c2) {
+		let det_main, det_one, det_two
+		det_main = a1 * b2 - a2 * b1;
+		det_one = a1 * c2 - c1 * a2;
+		det_two = c1 * b2 - c2 * b1;
+		x = det_one / det_main;
+		y = det_two / det_main;
+		return [x, y]
+	}
+	</script>
+	<script>
+	describe('addition', () => {
+		it(' Для коэффициентов a1,b1,c1,a2,b2,c2 = 1,3,2,9,2,7 результат: 0.44 и 0.68 ', () => {
+			assert.equal(s1(1, 3, 2, 9, 2, 7).toString(), [0.44, 0.68]);
+		});
+		it('Для коэффициентов a1,b1,c1,a2,b2,c2 = 1,3,2,9,2,7 результат не должен быть равен 0 и 0 ', () => {
+			assert.notEqual(s1(1, 3, 2, 9, 2, 7), [0, 0]);
+		});
+		it('Для коэффициентов a1,b1,c1,a2,b2,c2 = 9,8,7,6,5,4 результат: 2 и -1', () => {
+			assert.equal(s1(9, 8, 7, 6, 5, 4).toString(), [2, -1]);
+		});
+	});
+	</script>
+	<div id="mocha"></div>
+	<script>
+	mocha.run();
+	</script>
+</body>
+
+</html>
